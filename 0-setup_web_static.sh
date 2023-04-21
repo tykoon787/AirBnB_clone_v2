@@ -20,7 +20,7 @@ sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 
 ## Serving content of /data/web_static/current/
-sudo sed -i '/listen 80 default_server/a\\tlocation /hbnb_static {\n\t\t alias /data/web/static/current/;\n\t}' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server/a\\tlocation /hbnb_static {\n\t\talias /data/web/static/current/;\n\t}' /etc/nginx/sites-available/default
 
 ## Restart Service
 sudo nginx -s reload
