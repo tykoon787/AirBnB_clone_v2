@@ -2,7 +2,7 @@
 # This script sets up a static web server
 
 ## Install nginx
-sudo apt-get install nginx
+sudo apt-get install -y nginx
 
 ## Create directories and sub-dirs
 ### releases
@@ -20,7 +20,7 @@ sudo sed -i '$ a\<html><\n\t<title><p>Panda Practice</p></title>\n\t\t<body><h1>
 
 ## Create a symbolic link
 sudo mkdir -p /data/web_static/current
-sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
+sudo ln -sf /data/web_static/releases/test /data/web_static/current
 
 ## Changing ownership
 sudo chown -R ubuntu:ubuntu /data/
