@@ -24,3 +24,5 @@ sudo sed -i '/listen 80 default_server/a\\tlocation /hbnb_static {\n\t\talias /d
 
 ## Restart Service
 sudo nginx -s reload
+
+echo "This script finished"
