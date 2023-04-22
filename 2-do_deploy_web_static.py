@@ -11,6 +11,7 @@ env.host = [web_01, web_02]
 
 
 def do_deploy(archive_path):
+    """Deploys the archive to the server"""
     if os.path.exists(archive_path):
         # Upload to /tmp/
         put(archive_path, "/tmp/")
