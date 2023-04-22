@@ -1,13 +1,23 @@
 #!/usr/bin/python3
 # This script deploys an archieve of web_static to the servers
 
-from fabric.api import run, env, put
+from fabric.api import run, env, put, local
+from datetime import datetime
 import os
 # Hosts
 web_01 = '54.160.79.52'
 web_02 = '54.160.79.52'
 env.user = 'ubuntu'
 env.host = [web_01, web_02]
+
+
+def do_pack():
+    """Create a .tgz archive from web_static/"""
+    local("mkdir -p versions")
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    filename = "versions/web_static_{}.tgz".format(timestamp)
+    local("tar -czvf {} web_static".format(filename))
+    return filename
 
 
 def do_deploy(archive_path):
