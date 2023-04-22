@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
-# This is a Fabric Script that creates a .tgz from the webstatic
-# Folder
+#!/usr/bin/python3
+# This is a Fabric Script that creates a .tgz from web_static/
 
 from fabric.api import local
 from datetime import datetime
