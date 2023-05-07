@@ -2,12 +2,15 @@
 """
 Returns a html with the list of states
 
-Functions:
-    teardown_db:
-        Closes the current SQL Alchemy session after each request
+Routes:
+    /: Displays 'Hello HBNB!'.
+    /hbnb: Displays 'HBNB'.
+    /c/<text>: Displays 'C' followed by the value of <text>.
+    /python/(<text>): Displays 'Python' followed by the value of <text>
+    /number/<n>: Displays "n" if int
+    /number_odd_or_even/<n>: Display if <n> is even or odd
+    /states_list: Display the list of states
 
-    states_list:
-        Lists the states from storage engine
 """
 
 from flask import Flask, render_template
