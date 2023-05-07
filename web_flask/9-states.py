@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Starts a Flask web application
+"""Starts a Flask web application.
 
 Routes:
     /states: HTML page with a list of all State objects.
@@ -14,7 +13,8 @@ app = Flask(__name__)
 
 @app.route("/states", strict_slashes=False)
 def states():
-    """Displays an HTML page with a list of all States.
+    """
+    Displays an HTML page with a list of all States.
 
     States are sorted by name.
     """
@@ -32,7 +32,7 @@ def states_id(id):
 
 
 @app.teardown_appcontext
-def teardown(exception):
+def teardown(exc):
     """Remove the current SQLAlchemy session."""
     storage.close()
 
