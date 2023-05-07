@@ -15,7 +15,7 @@ Routes:
 
 
 from flask import Flask, render_template
-from models import storage, State
+from models import storage
 
 app = Flask(__name__)
 
@@ -33,7 +33,8 @@ def states_list():
     """
     Displays a list of states from the storage engine
     """
-    states = sorted(storage.all(State).values(), key=lambda state: state.name)
+    states = sorted(storage.all("State").values(),
+                    key=lambda state: state.name)
     return render_template('7-states_list.html', states=states)
 
 
