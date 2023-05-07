@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 """
 Returns a html with the list of states
+
+Functions:
+    teardown_db:
+        Closes the current SQL Alchemy session after each request
+
+    states_list:
+        Lists the states from storage engine
 """
 
 from flask import Flask, render_template
